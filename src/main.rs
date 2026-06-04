@@ -1,3 +1,8 @@
+mod ffi;
+
+use ffi::Compiler;
+
 fn main() {
-    println!("Hello, world!");
+    let compiler = Compiler::new();
+    compiler.run();
 }

@@ -1,7 +1,7 @@
 #include "span.h"
 #include <stdint.h>
 
-enum TOKEN_TYPE{
+typedef enum {
 	// Language keywords
 	TK_LET, TK_LOOP, TK_IF, TK_ELIF, TK_ELSE, TK_OR, TK_AND, TK_RETURN, TK_SAY, TK_BREAK, TK_DEFINE,
 	
@@ -13,17 +13,15 @@ enum TOKEN_TYPE{
 	TK_IDENTIFIER, TK_STRING_LITREAL, TK_DIGIT_LITREAL, TK_VOID_LITREAL, TK_OBJECT_LITREAL, TK_FALSE, TK_TRUE,
 	
 	TK_EOF
-};
+}TokenType;
 
 typedef struct Token{
-    TOKEN_TYPE type;
+    TokenType type;
     Span span;
 	char* lexeme;
 	union litreal
 	{
 		uint64_t i64;
 		double d;
-	};
-	
-
-} TOKEN;
+	}as;
+} Token;

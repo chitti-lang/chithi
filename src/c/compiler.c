@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "chithi/common.h"
+#include "chithi/compiler.h"
 
-int main() {
+void compile() {
 	printf("Chithi version %s\n", CHITHI_VERSION);
-	return 0;
 }
