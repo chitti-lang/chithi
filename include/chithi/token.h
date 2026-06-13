@@ -1,3 +1,4 @@
+#pragma once
 #include "span.h"
 #include <stdint.h>
 
@@ -25,3 +26,5 @@ typedef struct Token{
 		double d;
 	}as;
 } Token;
+
+void tokenInfo();
