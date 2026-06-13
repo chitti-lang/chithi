@@ -12,3 +12,5 @@ typedef struct {
 	LineMap *map;
 } SourceMap;
 
+void init_source_map(SourceMap* map);
+

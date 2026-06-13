@@ -19,9 +19,11 @@ typedef enum {
 typedef struct Token{
     TokenType type;
     Span span;
-	char* lexeme;
-	union litreal
-	{
+	char* lexeme; // Remove later
+	// int sym; array/hashmap: index/key
+	// array: lexeme	// O(n)
+	// hashmap: lexeme	// O(1)
+	union litreal {
 		uint64_t i64;
 		double d;
 	}as;
