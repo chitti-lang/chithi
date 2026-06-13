@@ -9,8 +9,8 @@ typedef struct {
 typedef struct {
 	const char *file_name;
 	const char *file_buffer;
-	LineMap *map;
+	LineMap *line_map;
 } SourceMap;
 
-void init_source_map(SourceMap* map);
+void init_source_map(SourceMap* map, const char *file_name, const char *file_buffer);
 

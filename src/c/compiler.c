@@ -2,10 +2,11 @@
 #include "chithi/common.h"
 #include "chithi/compiler.h"
 #include "chithi/source_map.h"
+#include "chithi/lexer.h"
 
 void compile(const char *file_name, const char *buffer) {
-	SourceMap* map;
-	init_source_map(map);
+	Lexer lexer;
+	init_lexer(&lexer, file_name, buffer);
 	printf("Chithi version %s\n", CHITHI_VERSION);
 	printf("%s\n", buffer);
 }
