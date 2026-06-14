@@ -5,5 +5,5 @@ typedef struct {
 	SourceMap* map;
 } Lexer;
 
-void init_lexer(Lexer *lexer, const char *file_name, const char *file_buffer );
+void init_lexer(Lexer *lexer, SourceMap *map);
 
