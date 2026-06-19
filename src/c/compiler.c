@@ -6,10 +6,10 @@
 
 void compile(const char *file_name, const char *buffer) {
 	SourceMap map;
-	init_source_map(&map, file_name, buffer);
+	source_map_init(&map, file_name, buffer);
 
 	Lexer lexer;
-	init_lexer(&lexer, &map);
+	lexer_init(&lexer, &map);
 
 	printf("Chithi version %s\n", CHITHI_VERSION);
 	printf("%s\n", buffer);

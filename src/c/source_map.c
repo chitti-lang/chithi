@@ -1,12 +1,12 @@
 #include "chithi/source_map.h"
 
-static void init_line_map(LineMap line_map){
+static void line_map_init(LineMap line_map){
     line_map.line = 0;
     line_map.col = 0;
 }
 
-void init_source_map(SourceMap* map, const char *file_name, const char *file_buffer){
+void source_map_init(SourceMap* map, const char *file_name, const char *file_buffer){
     map->file_name = file_name;
     map->file_buffer = file_buffer;
-    init_line_map(map->line_map);
+    line_map_init(map->line_map);
 }

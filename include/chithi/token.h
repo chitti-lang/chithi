@@ -1,18 +1,19 @@
 #pragma once
 #include "span.h"
 #include <stdint.h>
+#include "common.h"
 
 typedef enum {
 	// Language keywords
 	TK_LET, TK_LOOP, TK_IF, TK_ELIF, TK_ELSE, TK_OR, TK_AND, TK_RETURN, TK_SAY, TK_BREAK, TK_DEFINE,
-	
+
 	// Symbols
 	TK_EQUALS, TK_DOUBLE_EQUALS, TK_DOT, TK_DOT_DOT, TK_LEFT_BRACE, TK_RIGHT_BRACE, TK_LEFT_BRACKET,
 	TK_RIGHT_BRACKET, TK_PLUS, TK_MINUS, TK_DIVIDE, TK_PERCENTAGE, TK_GRATERTHAN, TK_GREATERTHAN_EQUAL, TK_LESSTHAN, TK_LESSTHAN_EQUAL,
 
 	// Litreals
 	TK_IDENTIFIER, TK_STRING_LITREAL, TK_DIGIT_LITREAL, TK_VOID_LITREAL, TK_OBJECT_LITREAL, TK_FALSE, TK_TRUE,
-	
+
 	TK_EOF
 }TokenType;
 
@@ -29,4 +30,13 @@ typedef struct Token{
 	}as;
 } Token;
 
+typedef struct Tokens {
+    Token* tokens;
+    uint32_t capacity;
+    uint32_t size;
+} Tokens;
+
 void tokenInfo();
+void tokens_init(Tokens* tk);
+void tokens_append(Tokens* tk, Token token);
+void tokens_free(Tokens* tk);

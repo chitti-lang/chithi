@@ -12,5 +12,4 @@ typedef struct {
 	LineMap line_map;
 } SourceMap;
 
-void init_source_map(SourceMap* map, const char *file_name, const char *file_buffer);
-
+void source_map_init(SourceMap* map, const char *file_name, const char *file_buffer);
